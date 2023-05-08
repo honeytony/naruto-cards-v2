@@ -35,6 +35,7 @@ function App() {
     const [score, setScore] = useState(0);
     const [turns, setTurns] = useState(0);
     const [leaders, setLeaders] = useState([
+        { name: 'Nuntlesko', scores: 9999999999999999999999999 },
         { name: 'toha sadness', scores: 12332 },
         { name: 'боря могила', scores: 12331 },
     ]);
