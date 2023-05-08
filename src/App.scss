@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(8, 8, 8);
+    background-size: contain 100%;
+    background-position: top center;
+    background-repeat: no-repeat;
+    perspective: 1000px;
+}
+
+.App {
+    background-image: url(./Assets/Images/floor.jpg);
+
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center bottom;
+    overflow-x: hidden;
+    .container {
+        opacity: 1;
+        transition: 2s;
+    }
+    &.about {
+        .git {
+            color: white;
+        }
+    }
+    &.game {
+        overflow-y: auto;
+        scrollbar-color: red red;
+        &:before {
+            // left: -600px;
+            transform: rotateY(-120deg);
+        }
+        &:after {
+            // right: -50%;
+            transform: rotateY(120deg);
+        }
+        .container {
+            opacity: 0;
+        }
+    }
+
+    height: 100vh;
+    &:before {
+        background-image: url(./Assets/Images/left.jpg);
+        left: 0;
+        background-position: right top;
+
+        transform-origin: left center;
+    }
+    &:after {
+        background-image: url(./Assets/Images/right.jpg);
+        right: 0;
+        background-position: left top;
+
+        transform-origin: right center;
+    }
+    &:before,
+    &:after {
+        transition: 2s linear;
+        width: 50%;
+        height: 90vh;
+        background-size: cover;
+        content: ' ';
+        display: inline-block;
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        filter: brightness(0.4);
+
+        backface-visibility: hidden;
+    }
+}
+
+@keyframes redLine {
+    0% {
+        box-shadow: inset 20px 14px 220px -26px #ffb0a6;
+    }
+    25% {
+        box-shadow: inset -20px -14px 220px -26px #ffeae7;
+    }
+    50% {
+        box-shadow: inset 20px 14px 220px -26px #ff1e00;
+    }
+    75% {
+        box-shadow: inset -20px -14px 220px -26px #ffeae7;
+    }
+    100% {
+        box-shadow: inset 20px 14px 220px -26px #ffb0a6;
+    }
+}
