@@ -2,7 +2,7 @@
     "name": "cards-react",
     "version": "0.1.0",
     "private": true,
-    "homepage": "./",
+    "homepage": "https://honeytony.github.io/naruto-cards-v2/",
     "dependencies": {
         "cra-template": "1.2.0",
         "gh-pages": "^4.0.0",
