@@ -1,19 +1,22 @@
 .container {
+    color: white;
     width: 1000px;
     max-width: 100%;
-    height: 60vh;
+    height: 80vh;
     margin: 0 auto;
-    padding-top: 40px;
+    padding-top: 10px;
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 50px;
     z-index: 2;
     position: relative;
-    animation: start 0.3s linear;
+    animation: start 0.3s ease-in alternate;
 
     .git {
-        width: 50%;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         a {
             border-radius: 25px;
             box-sizing: border-box;
@@ -41,45 +44,60 @@
             font-weight: 300;
         }
     }
-    .logo {
-        width: 470px;
-        max-width: 100%;
-        height: 253px;
-        background-image: url(../../Assets/Images/logo.png);
-        background-size: contain;
-        background-repeat: no-repeat;
-        background-position: center bottom;
+    .left,
+    .right {
+        width: 45%;
     }
-
-    .buttons {
+    .left {
         display: flex;
         flex-direction: column;
-        justify-content: space-between;
-        min-height: 150px;
-        width: 400px;
-        max-width: 100%;
+        margin-top: 200px;
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: 150px;
+            width: 400px;
+            max-width: 100%;
 
-        button {
-            box-sizing: border-box;
+            button {
+                box-sizing: border-box;
+                border: none;
+                width: 200px;
+                height: 68px;
+                font-size: 40px;
+                background: none;
+                color: white;
+                cursor: pointer;
+                transition: 0.3s;
+                text-align: left;
 
-            width: 100%;
-            height: 68px;
-
-            background: linear-gradient(90deg, #ffa714 46.38%, #ef4b1f 63.31%);
-            border: 4px solid #ffffff;
-            border-radius: 100px;
-            font-family: 'Montserrat';
-            font-style: normal;
-            font-weight: 900;
-            font-size: 28px;
-            color: white;
-            cursor: pointer;
-            &:hover {
-                border: 4px solid rgb(71, 71, 255);
-                color: rgb(71, 71, 255);
+                &:hover {
+                    color: #ffa714;
+                }
             }
         }
     }
+    .line {
+        width: 8px;
+        height: 100%;
+        background-color: rgba(255, 255, 255, 0.2);
+        border-radius: 100px;
+    }
+    .right {
+        h2 {
+            font-size: 40px;
+        }
+        ul {
+            color: white;
+            list-style: none;
+        }
+        ul li {
+            font-size: 22px;
+            margin-top: 10px;
+        }
+    }
+
     .dif {
         position: absolute;
         top: 40%;
@@ -90,12 +108,93 @@
         }
     }
 }
+.logo {
+    width: 470px;
+    max-width: 100%;
+    height: 253px;
+    background-image: url(../../Assets/Images/logo.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+}
 
+.auth {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 400;
+
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 400px;
+        max-width: 90%;
+        gap: 10px;
+        h3 {
+            letter-spacing: 3px;
+            font-size: 22px;
+        }
+        input {
+            border: 3px solid rgba(255, 255, 255, 0.8);
+            height: 60px;
+            border-radius: 50px;
+            background-color: transparent;
+            color: white;
+            padding-left: 20px;
+            outline-color: transparent;
+        }
+    }
+}
+button {
+    font-size: 22px;
+
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    background: linear-gradient(91.06deg, #ffb612 10.42%, #ff1402 91.14%);
+    border-radius: 50px;
+    cursor: pointer;
+}
 @keyframes start {
     from {
-        transform: scale(0.8) rotateZ(2deg);
+        transform: translateY(20px);
     }
     to {
-        transform: scale(1) rotateZ(0deg);
+        transform: translateY(0px);
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .App {
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .App {
+        .container {
+            justify-content: center;
+            .left {
+                margin-top: 10px;
+                width: 80%;
+            }
+            .right {
+                width: 80%;
+                h2 {
+                    font-size: 24px;
+                }
+
+                ul {
+                    li {
+                        font-size: 14px;
+                        margin-top: 10px;
+                    }
+                }
+            }
+        }
     }
 }

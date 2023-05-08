@@ -10,11 +10,7 @@ body {
 }
 
 .App {
-    background-image: url(./Assets/Images/floor.jpg);
-
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center bottom;
+    background-color: #2d2d2d;
     overflow-x: hidden;
     .container {
         opacity: 1;
@@ -43,14 +39,14 @@ body {
 
     height: 100vh;
     &:before {
-        background-image: url(./Assets/Images/left.jpg);
+        // background-image: url(./Assets/Images/left.jpg);
         left: 0;
         background-position: right top;
 
         transform-origin: left center;
     }
     &:after {
-        background-image: url(./Assets/Images/right.jpg);
+        // background-image: url(./Assets/Images/right.jpg);
         right: 0;
         background-position: left top;
 

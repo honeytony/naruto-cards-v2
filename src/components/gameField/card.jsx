@@ -8,9 +8,17 @@ const Card = ({ src, setCurrentCard, index, active, card, disabled }) => {
     }
     return (
         <div className={active ? 'card active' : 'card'} onClick={() => handleClick(card)}>
-            <img width="200" src={src} alt={index} />
+            <div
+                className="card-bg"
+                style={{
+                    background: `url('${card.card}')`,
+                    backgroundPosition: 'center center',
+                    backgroundSize: 'cover',
+                }}>
+                <img src={card.heroImg} alt={index} />
+            </div>
             <div className="card-back">
-                <div className="sharingan"></div>
+                <div className="image"></div>
             </div>
         </div>
     );

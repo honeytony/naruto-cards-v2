@@ -3,8 +3,11 @@ import Card from './card';
 import './gameField.scss';
 const CardList = ({ cards, setCurrentCard, choiseOne, choiseTwo, disabled, score }) => {
     return (
-        <>
-            <h3>Количество очков: {score}</h3>
+        <div className="field">
+            <div className="header">
+                <div className="logo"></div>
+                <h3>Scores: {score}</h3>
+            </div>
             <div className="cardList">
                 {cards.map((card, index) => (
                     <Card
@@ -18,7 +21,7 @@ const CardList = ({ cards, setCurrentCard, choiseOne, choiseTwo, disabled, score
                     />
                 ))}
             </div>
-        </>
+        </div>
     );
 };
 
