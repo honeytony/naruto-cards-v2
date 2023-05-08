@@ -3,7 +3,7 @@ import GameMenu from './components/gameMenu/gameMenu';
 import { useState, useEffect } from 'react';
 import './App.scss';
 
-const allDataa = [
+const allData = [
     {
         src: 'https://i.pinimg.com/736x/e1/a7/2c/e1a72c43b9a471226f8bf0050878a6b9.jpg',
         matched: false,
