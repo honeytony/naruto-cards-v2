@@ -37,6 +37,7 @@ const allData = [
         matched: false,
     },
 ];
+
 const shuffleCards = (array, dif) => {
     switch (dif) {
         case 0:
